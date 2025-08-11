@@ -25,11 +25,12 @@ env_key = os.getenv("GROQ_API_KEY", "")
 with st.sidebar:
     st.header("Configuration")
     # st.caption("Provide your Groq API Key via Streamlit Secrets or here directly.")
-    groq_api_key = st.text_input(
-        "Groq API Key",
-        value=groq_key_from_secrets or env_key,
-        type="password"
-    )
+    groq_api_key = groq_key_from_secrets or env_key
+    # groq_api_key = st.text_input(
+    #     "Groq API Key",
+    #     value=groq_key_from_secrets or env_key,
+    #     type="password"
+    # )
     model_name = st.selectbox(
         "Groq Model",
         [
